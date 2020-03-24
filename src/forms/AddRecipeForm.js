@@ -24,7 +24,7 @@ const AddRecipeForm = props => {
       <label>Name</label>
       <input type="text" name="name" value={recipe.name} onChange={handleInputChange} />
       <label>Ingredients</label>
-      <input type="text" name="ingredients" value={recipe.ingredient} onChange={handleInputChange} />
+      <input type="text" name="ingredient" value={recipe.ingredient} onChange={handleInputChange} />
       <button>Add New Recipe</button>
     </form>
   )

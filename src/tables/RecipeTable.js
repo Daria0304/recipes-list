@@ -16,10 +16,18 @@ const RecipeTable = props => (
             <td>{recipe.name}</td>
             <td>{recipe.ingredient}</td>
             <td>
-              <button className="button muted-button">Edit</button>
               <button
-              onClink={() => props.deleteRecipe(recipe.id)}
-              className="button muted-button">Delete</button>
+                onClink={() => {
+                props.editRow(recipe)
+                }}
+                className="button muted-button">
+                Edit
+              </button>
+              <button
+                onClink={() => props.deleteRecipe(recipe.id)}
+                className="button muted-button">
+                Delete
+              </button>
             </td>
           </tr>
         ))
