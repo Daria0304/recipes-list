@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const AddRecipeForm = props => {
   const initialFormState = { id: null, name: '', ingredient:'' }
@@ -30,4 +30,4 @@ const AddRecipeForm = props => {
   )
 }
 
-export default AddRecipeForm
+export default AddRecipeForm;

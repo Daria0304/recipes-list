@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 
 const EditRecipeForm = props => {
   const [recipe, setRecipe] = useState(props.currentRecipe)
 
   useEffect(() => {
     setRecipe(props.currentRecipe)
-    }, [props])
+    }, [ props ])
 
   const handleInputChange = event => {
     const { name, value } = event.targer
@@ -33,4 +33,4 @@ const EditRecipeForm = props => {
   )
 }
 
-export default EditRecipeForm
+export default EditRecipeForm;

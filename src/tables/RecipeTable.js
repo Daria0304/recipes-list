@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const RecipeTable = props => (
   <table>
@@ -40,4 +40,4 @@ const RecipeTable = props => (
   </table>
 )
 
-export default RecipeTable
+export default RecipeTable;

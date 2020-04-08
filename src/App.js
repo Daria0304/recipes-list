@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import AddRecipeForm from './forms/AddRecipeForm'
-import RecipeTable from './tables/RecipeTable'
-import EditRecipeForm from './forms/EditRecipeForm'
+import React, { useState, Fragment } from 'react';
+import AddRecipeForm from './forms/AddRecipeForm';
+import EditRecipeForm from './forms/EditRecipeForm';
+import RecipeTable from './tables/RecipeTable';
 
 const App = () => {
 // Data
@@ -14,37 +14,35 @@ const App = () => {
   const initialFormState = { id: null, name: '', ingredient: '' }
 
 // Setting state
-  const [recipes, setRecipes] = useState(recipesData)
-  const [currentRecipe, setCurrentRecipe] = useState(initialFormState)
-  const [editing, setEditing] = useState(false)
+  const [ recipes, setRecipes ] = useState(recipesData)
+  const [ currentRecipe, setCurrentRecipe ] = useState(initialFormState)
+  const [ editing, setEditing ] = useState(false)
 
 
 // CRUD operations
   const addRecipe = recipe => {
     recipe.id = recipes.length + 1
-    setRecipes([...recipes, recipe])
+    setRecipes([ ...recipes, recipe ])
   }
 
   const deleteRecipe = id => {
-    setRecipes(recipes.filter(recipe => recipe.id !== id))
     setEditing(false)
+    setRecipes(recipes.filter(recipe => recipe.id !== id))
   }
 
   const updateRecipe = (id, updateRecipe) => {
     setEditing(false)
-
     setRecipes(recipes.map(recipe => (recipe.id === id ? updateRecipe : recipe)))
   }
 
   const editRow = recipe => {
     setEditing(true)
-
     setCurrentRecipe({ id: recipe.id, name: recipe.name, ingredient: recipe.ingredient })
   }
 
   return (
     <div className="container">
-      <h1>Awesome Recipes App</h1>
+      <h1>Awesome Recipes App with Hooks</h1>
       <div className="flex-row">
         <div className="flex-large">
           {editing ? (
@@ -73,4 +71,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
